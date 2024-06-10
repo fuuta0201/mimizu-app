@@ -4,12 +4,14 @@ import Tabs from './components/Tabs';
 import bgImage from './assets/background.png';
 import Home from './screens/Home';
 import Head from './components/Head';
+import Setting from './components/Setting';
 
 export default function App() {
   return (
     <View style={styles.container}>
       <ImageBackground source={bgImage} resizeMode="cover" style={styles.image}>
         <Head></Head>
+        <Setting></Setting>
         <Home></Home>
         <Tabs></Tabs>
       </ImageBackground>
