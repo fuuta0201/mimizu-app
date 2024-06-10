@@ -4,12 +4,14 @@ import Tabs from './components/Tabs';
 import bgImage from './assets/background.png';
 import Home from './screens/Home';
 import StatusPannel from './components/StatusPannel';
+import CoinPannel from './components/CoinPannel';
 
 export default function App() {
   return (
     <View style={styles.container}>
       <ImageBackground source={bgImage} resizeMode="cover" style={styles.image}>
         <StatusPannel></StatusPannel>
+        <CoinPannel></CoinPannel>
         <Home></Home>
         <Tabs></Tabs>
       </ImageBackground>
