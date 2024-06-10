@@ -24,9 +24,9 @@ const StatusPannel = () => {
 
 const styles = StyleSheet.create({
   container: {
-    position: 'absolute',
-    top: 60,
-    left: 20,
+    //position: 'absolute',
+    //top: 60,
+    //left: 20,
     width: 245,
     height: 64,
     backgroundColor: '#fff',

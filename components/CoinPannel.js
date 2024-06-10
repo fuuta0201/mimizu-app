@@ -20,9 +20,9 @@ const CoinPannel = () => {
 
 const styles = StyleSheet.create({
   container: {
-    position: 'absolute',
-    top: 60,
-    right: 21,
+    //position: 'absolute',
+    //top: 60,
+    //right: 21,
     width: 85,
     height: 35,
     backgroundColor: '#fff',

@@ -3,15 +3,13 @@ import { ImageBackground, StyleSheet, Text, View } from 'react-native';
 import Tabs from './components/Tabs';
 import bgImage from './assets/background.png';
 import Home from './screens/Home';
-import StatusPannel from './components/StatusPannel';
-import CoinPannel from './components/CoinPannel';
+import Head from './components/Head';
 
 export default function App() {
   return (
     <View style={styles.container}>
       <ImageBackground source={bgImage} resizeMode="cover" style={styles.image}>
-        <StatusPannel></StatusPannel>
-        <CoinPannel></CoinPannel>
+        <Head></Head>
         <Home></Home>
         <Tabs></Tabs>
       </ImageBackground>
