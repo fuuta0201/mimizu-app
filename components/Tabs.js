@@ -26,6 +26,14 @@ const Tabs = ({ navigation, currentScreen }) => {
     }
   }
 
+  const onPressGameButton = () => {
+    if ( currentScreen == 'Game' ) {
+      navigation.navigate('Home');
+    } else {
+      navigation.navigate('Game');
+    }
+  }
+
   return (
     <View style={styles.container}>
       <ImageBackground source={wood} resizeMode="cover" style={styles.background}>
@@ -37,7 +45,7 @@ const Tabs = ({ navigation, currentScreen }) => {
           <Image source={box} style={styles.box} />
           <Text style={styles.text}>BOX</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={onPressGameButton}>
           <Image source={game} style={styles.game} />
           <Text style={styles.text}>ゲーム</Text>
         </TouchableOpacity>
