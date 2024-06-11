@@ -10,22 +10,30 @@ import game from '../assets/game.png';
 
 const Tabs = ({ navigation, currentScreen }) => {
 
-  const onPressBoxButton = (navigation) => {
-    if ( currentScreen == 'Home' ) {
-      navigation.navigate('Box');
-    } else if ( currentScreen == 'Box' ) {
+  const onPressBoxButton = () => {
+    if ( currentScreen == 'Box' ) {
       navigation.navigate('Home');
+    } else {
+      navigation.navigate('Box');
+    }
+  }
+
+  const onPressGachaButton = () => {
+    if ( currentScreen == 'Gacha' ) {
+      navigation.navigate('Home');
+    } else {
+      navigation.navigate('Gacha');
     }
   }
 
   return (
     <View style={styles.container}>
       <ImageBackground source={wood} resizeMode="cover" style={styles.background}>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={onPressGachaButton}>
           <Image source={gacha} style={styles.gacha} />
           <Text style={styles.text}>ガチャ</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.button} onPress={() => onPressBoxButton(navigation)}>
+        <TouchableOpacity style={styles.button} onPress={onPressBoxButton}>
           <Image source={box} style={styles.box} />
           <Text style={styles.text}>BOX</Text>
         </TouchableOpacity>

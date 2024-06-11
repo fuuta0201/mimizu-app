@@ -6,6 +6,7 @@ import Tabs from './components/Tabs';
 import bgImage from './assets/background.png';
 import Home from './screens/Home';
 import Box from './screens/Box';
+import Gacha from './screens/Gacha';
 import Head from './components/Head';
 import Setting from './components/Setting';
 
@@ -35,6 +36,19 @@ const BoxScreen = ({ navigation }) => {
   );
 }
 
+const GachaScreen = ({ navigation }) => {
+  return (
+    <View style={styles.container}>
+      <ImageBackground source={bgImage} resizeMode="cover" style={styles.image}>
+        <Head></Head>
+        <Setting></Setting>
+        <Gacha></Gacha>
+        <Tabs navigation={navigation} currentScreen='Gacha'></Tabs>
+      </ImageBackground>
+    </View>
+  );
+}
+
 const Stack = createNativeStackNavigator();
 
 export default function App() {
@@ -47,6 +61,7 @@ export default function App() {
       >
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Box" component={BoxScreen} />
+        <Stack.Screen name="Gacha" component={GachaScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
