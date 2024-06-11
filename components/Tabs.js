@@ -1,12 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Image, ImageBackground, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import wood from '../assets/wood.png';
 
 import gacha from '../assets/gacha.png';
 import box from '../assets/box.png';
 import game from '../assets/game.png';
 
-const Tabs = () => {
+const Tabs = ({ navigation, currentScreen }) => {
+
+  const onPressBoxButton = (navigation) => {
+    if ( currentScreen == 'Home' ) {
+      navigation.navigate('Box');
+    } else if ( currentScreen == 'Box' ) {
+      navigation.navigate('Home');
+    }
+  }
+
   return (
     <View style={styles.container}>
       <ImageBackground source={wood} resizeMode="cover" style={styles.background}>
@@ -14,7 +25,7 @@ const Tabs = () => {
           <Image source={gacha} style={styles.gacha} />
           <Text style={styles.text}>ガチャ</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={() => onPressBoxButton(navigation)}>
           <Image source={box} style={styles.box} />
           <Text style={styles.text}>BOX</Text>
         </TouchableOpacity>
