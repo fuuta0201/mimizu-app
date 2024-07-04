@@ -5,7 +5,7 @@ import Mimizu from '../components/Mimizu'
 const Home = () => {
   return (
     <View style={styles.container}>
-      <Mimizu></Mimizu>
+      <Mimizu ver={2}></Mimizu>
     </View>
   )
 }
