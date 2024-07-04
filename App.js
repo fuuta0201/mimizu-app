@@ -10,6 +10,7 @@ import Gacha from './screens/Gacha';
 import Game from './screens/Game';
 import Head from './components/Head';
 import Setting from './components/Setting';
+import ButtonBack from './components/ButtonBack'
 
 const HomeScreen = ({ navigation }) => {
   return (
@@ -24,28 +25,20 @@ const HomeScreen = ({ navigation }) => {
   );
 }
 
-const BoxScreen = ({ navigation }) => {
+const GachaScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      <ImageBackground source={bgImage} resizeMode="cover" style={styles.image}>
-        <Head></Head>
-        <Setting></Setting>
-        <Box></Box>
-        <Tabs navigation={navigation} currentScreen='Box'></Tabs>
-      </ImageBackground>
+      <ButtonBack  navigation={navigation}/>
+      <Gacha></Gacha>
     </View>
   );
 }
 
-const GachaScreen = ({ navigation }) => {
+const BoxScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      <ImageBackground source={bgImage} resizeMode="cover" style={styles.image}>
-        <Head></Head>
-        <Setting></Setting>
-        <Gacha></Gacha>
-        <Tabs navigation={navigation} currentScreen='Gacha'></Tabs>
-      </ImageBackground>
+      <ButtonBack  navigation={navigation}/>
+      <Box></Box>
     </View>
   );
 }
@@ -53,12 +46,8 @@ const GachaScreen = ({ navigation }) => {
 const GameScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      <ImageBackground source={bgImage} resizeMode="cover" style={styles.image}>
-        <Head></Head>
-        <Setting></Setting>
-        <Game></Game>
-        <Tabs navigation={navigation} currentScreen='Game'></Tabs>
-      </ImageBackground>
+      <ButtonBack  navigation={navigation}/>
+      <Game></Game>
     </View>
   );
 }
@@ -85,6 +74,9 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: '#BB9459',
+    width: '100%',
+    height: '100%',
+    position: 'relative',
   },
   image: {
     width: '100%',
