@@ -37,8 +37,10 @@ const GachaScreen = ({ navigation }) => {
 const BoxScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      <ButtonBack  navigation={navigation}/>
-      <Box></Box>
+      <ImageBackground source={bgImage} resizeMode="cover" style={styles.image}>
+        <ButtonBack  navigation={navigation}/>
+        <Box></Box>
+      </ImageBackground>
     </View>
   );
 }
@@ -85,5 +87,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     position: 'relative',
-  }
+  },
 });
