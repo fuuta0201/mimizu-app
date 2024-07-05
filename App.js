@@ -4,6 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Tabs from './components/Tabs';
 import bgImage from './assets/background.png';
+import bgImage2 from './assets/background-02.png';
 import Home from './screens/Home';
 import Box from './screens/Box';
 import Gacha from './screens/Gacha';
@@ -48,8 +49,10 @@ const BoxScreen = ({ navigation }) => {
 const GameScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      <ButtonBack  navigation={navigation}/>
-      <Game></Game>
+      <ImageBackground source={bgImage2} resizeMode="cover" style={styles.image}>
+        <ButtonBack  navigation={navigation}/>
+        <Game></Game>
+      </ImageBackground>
     </View>
   );
 }
